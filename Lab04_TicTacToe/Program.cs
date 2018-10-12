@@ -34,8 +34,16 @@ namespace Lab04_TicTacToe
       Console.ReadKey();
       //instantiates the game
       Game Bamboozle = new Game(PlayerOne, PlayerTwo);
-      //plays the game. the trigger is buried in the console writeline
-      Console.WriteLine($"Congratulations {Bamboozle.Play().Name}, you won!!!");
+      //plays the game by trigger Bamboozle.Play;
+      string winner = Bamboozle.Play().Name;
+      if (winner != "There is no winner") 
+      {
+        Console.WriteLine($"Congratulations {winner}, you won!!!");
+      }
+      else
+      {
+        Console.WriteLine("Nobody won :(");
+      }
       Console.ReadKey();
 
 

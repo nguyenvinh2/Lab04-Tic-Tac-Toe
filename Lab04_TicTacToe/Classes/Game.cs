@@ -30,18 +30,30 @@ namespace Lab04_TicTacToe.Classes
     /// <returns>Winner</returns>
     public Player Play()
     {
+      int count = 0;
       //the board has already been instantiate so it's just matter of calling it up.
       //NextPlayer calls up whichever play current has the true property
       //TakeTurn is prebuilt for user input
       //switchplayer changes boolen logic for each player
-      while (CheckForWinner(Board) == false)
+      while (CheckForWinner(Board) == false && count <9)
       {
         Board.DisplayBoard();
         NextPlayer().TakeTurn(Board);
         SwitchPlayer();
+        count++;
       }
       Board.DisplayBoard();
-      return NextPlayer();
+      if (CheckForWinner(Board) == true)
+      {
+        return NextPlayer();
+      }
+      //returns a no winner object
+      else
+      {
+        Player NoWinner = new Player();
+        NoWinner.Name = "There is no winner";
+        return NoWinner;
+      }
 
       //TODO: Complete this method and utilize the rest of the class structure to play the game.
 
