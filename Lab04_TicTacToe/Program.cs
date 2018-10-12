@@ -11,29 +11,34 @@ namespace Lab04_TicTacToe
       PlayGame();
 		}
 
-		static void PlayGame()
-		{
-      Player playerOne = new Player();
-      Player playerTwo = new Player();
+    static void PlayGame()
+    {
+
+      //Sets up players
+      Player PlayerOne = new Player();
+      Player PlayerTwo = new Player();
+      //Asks for player one info
       Console.WriteLine("What is the name of player one?");
-      playerOne.Name = Console.ReadLine();
-      playerOne.Marker = "X";
-      playerOne.IsTurn = true;
+      PlayerOne.Name = Console.ReadLine();
+      PlayerOne.Marker = "X";
+      PlayerOne.IsTurn = true;
+      //asks for player two info
       Console.WriteLine("What is the name of player two?");
-      playerTwo.Name = Console.ReadLine();
-      playerTwo.Marker = "O";
-      playerTwo.IsTurn = false;
-      Console.WriteLine($"Welcome {playerOne.Name}! You are {playerOne.Marker}.");
-      Console.WriteLine($"Welcome {playerTwo.Name}! You are {playerTwo.Marker}.");
+      PlayerTwo.Name = Console.ReadLine();
+      PlayerTwo.Marker = "O";
+      PlayerTwo.IsTurn = false;
+      //tells info to players
+      Console.WriteLine($"Welcome {PlayerOne.Name}! You are {PlayerOne.Marker}.");
+      Console.WriteLine($"Welcome {PlayerTwo.Name}! You are {PlayerTwo.Marker}.");
       Console.WriteLine("Now let's play Bamboozle. Press any key to continue...");
       Console.ReadKey();
-
-      Board tickytack = new Board();
-      tickytack.DisplayBoard();
-
+      //instantiates the game
+      Game Bamboozle = new Game(PlayerOne, PlayerTwo);
+      //plays the game. the trigger is buried in the console writeline
+      Console.WriteLine($"Congratulations {Bamboozle.Play().Name}, you won!!!");
       Console.ReadKey();
 
-      take
+
 
       // TODO: Instantiate your players
       // Create the Game

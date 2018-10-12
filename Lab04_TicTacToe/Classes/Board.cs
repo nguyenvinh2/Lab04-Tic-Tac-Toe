@@ -16,7 +16,9 @@ namespace Lab04_TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+    /// <summary>
+    /// Just a simple nested for loop to print out the board above
+    /// </summary>
 		public void DisplayBoard()
 		{
       Console.WriteLine();
