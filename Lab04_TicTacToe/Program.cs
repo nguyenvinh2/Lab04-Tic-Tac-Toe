@@ -5,12 +5,21 @@ namespace Lab04_TicTacToe
 {
 	class Program
 	{
+    /// <summary>
+    /// calls up game
+    /// </summary>
+    /// <param name="args"></param>
 		static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
       PlayGame();
 		}
-
+    /// <summary>
+    /// overall game sequence for game
+    /// creates player one and two
+    /// creates game and runs it
+    /// prints out winner after game is over
+    /// </summary>
     static void PlayGame()
     {
 
