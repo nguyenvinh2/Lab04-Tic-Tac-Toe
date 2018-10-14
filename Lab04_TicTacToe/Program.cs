@@ -54,6 +54,9 @@ namespace Lab04_TicTacToe
         Console.WriteLine("Nobody won :(");
       }
       Console.ReadKey();
+      Console.WriteLine();
+      Console.WriteLine("The game is over. Press any key to exit...");
+      Console.ReadKey();
       // TODO: Instantiate your players
       // Create the Game
       // Play the Game

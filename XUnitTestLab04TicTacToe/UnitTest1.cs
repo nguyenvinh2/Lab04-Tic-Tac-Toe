@@ -47,7 +47,46 @@ namespace XUnitTestLab04TicTacToe
       int[] testArray = { Player.PositionForNumber(input).Row, Player.PositionForNumber(input).Column };
       Assert.Equal(expected, testArray);
     }
-
-
+    /// <summary>
+    /// Checks to see if game can determine a win based on
+    /// correct combination of coordinates having the same string
+    /// by output true boolean
+    /// for coordinates (0,0) (0, 1) (0, 2)
+    /// (1,0) (1,1) (1,2)
+    /// (2,0) (2,1) (2,2)
+    /// e.g. each row having the same "O" marker
+    /// </summary>
+    /// <param name="input"></param>
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(2)]
+    public void CanTriggerWin(int input)
+    {
+      Player PlayerOne = new Player();
+      Player PlayerTwo = new Player();
+      Game TestGame = new Game(PlayerOne, PlayerTwo);
+      for (int i = 0; i < 3; i++)
+      {
+        TestGame.Board.GameBoard[input, i] = "O";
+      }
+      Assert.True(TestGame.CheckForWinner(TestGame.Board));
+    }
+    /// <summary>
+    /// Tests that the game can detect
+    /// whose turn it is
+    /// in this case it should be player one
+    /// as IsTurn is true
+    /// </summary>
+    [Fact]
+    public void ThatUniqueTest()
+    {
+      Player PlayerOne = new Player();
+      PlayerOne.IsTurn = true;
+      Player PlayerTwo = new Player();
+      PlayerTwo.IsTurn = false;
+      Game TestGame = new Game(PlayerOne, PlayerTwo);
+      Assert.Equal(PlayerOne, TestGame.NextPlayer());
+    }
   }
 }
