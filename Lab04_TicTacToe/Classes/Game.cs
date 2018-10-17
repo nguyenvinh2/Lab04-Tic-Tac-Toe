@@ -45,6 +45,7 @@ namespace Lab04_TicTacToe.Classes
       Board.DisplayBoard();
       if (CheckForWinner(Board) == true)
       {
+        SwitchPlayer();
         return NextPlayer();
       }
       //returns a no winner object
