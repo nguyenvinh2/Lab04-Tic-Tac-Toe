@@ -1,4 +1,4 @@
-# Lab04-Tic-Tac-Toe
+# Tic-Tac-Toe
 
 ## Tic Tac Toe Game
 
